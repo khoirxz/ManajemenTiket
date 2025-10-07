@@ -1,0 +1,1409 @@
+{
+	"info": {
+		"_postman_id": "cfd9ca42-68a1-4771-891d-4abdb91457cb",
+		"name": "GriyaNet",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3977279"
+	},
+	"item": [
+		{
+			"name": "AUTH",
+			"item": [
+				{
+					"name": "LOGIN",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "admin@example.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "password",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}api/login",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@example.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "password",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "api/login",
+									"host": [
+										"api"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Oct 2025 05:02:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"3|dpewRczXQGaWPLsY3nXPZp8uwTtdfFYcXisSvaB7eb62d29d\",\n    \"user\": {\n        \"id\": \"0199adb5-22bf-72cb-8715-428870cf8619\",\n        \"name\": \"Admin\",\n        \"email\": \"admin@example.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2025-10-04T05:32:33.000000Z\",\n        \"updated_at\": \"2025-10-04T05:32:33.000000Z\",\n        \"roles\": [\n            {\n                \"id\": \"dbeb3a42-64b7-404e-a36e-845b0a7329b2\",\n                \"name\": \"ADMIN\",\n                \"created_at\": \"2025-10-04T05:32:33.000000Z\",\n                \"updated_at\": \"2025-10-04T05:32:33.000000Z\",\n                \"pivot\": {\n                    \"user_id\": \"0199adb5-22bf-72cb-8715-428870cf8619\",\n                    \"role_id\": \"dbeb3a42-64b7-404e-a36e-845b0a7329b2\"\n                }\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "VERIFY",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/me",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "api/me",
+									"host": [
+										"api"
+									],
+									"path": [
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Oct 2025 05:04:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"0199adb5-22bf-72cb-8715-428870cf8619\",\n    \"name\": \"Admin\",\n    \"email\": \"admin@example.com\",\n    \"email_verified_at\": null,\n    \"created_at\": \"2025-10-04T05:32:33.000000Z\",\n    \"updated_at\": \"2025-10-04T05:32:33.000000Z\",\n    \"roles\": [\n        {\n            \"id\": \"dbeb3a42-64b7-404e-a36e-845b0a7329b2\",\n            \"name\": \"ADMIN\",\n            \"created_at\": \"2025-10-04T05:32:33.000000Z\",\n            \"updated_at\": \"2025-10-04T05:32:33.000000Z\",\n            \"pivot\": {\n                \"user_id\": \"0199adb5-22bf-72cb-8715-428870cf8619\",\n                \"role_id\": \"dbeb3a42-64b7-404e-a36e-845b0a7329b2\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "LOGOUT",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/logout",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "api/logout",
+									"host": [
+										"api"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Oct 2025 05:28:26 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Logged out\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CUSTOMER",
+			"item": [
+				{
+					"name": "FETCH ALL CUSTOMERS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/customers",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"customers"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "CV karya",
+									"disabled": true
+								},
+								{
+									"key": "per_page",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "GET request to retrieve a list of all customers. No path parameters or request body required."
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/customers",
+									"host": [
+										"api"
+									],
+									"path": [
+										"customers"
+									],
+									"query": [
+										{
+											"key": "q",
+											"value": "CV karya",
+											"disabled": true
+										},
+										{
+											"key": "per_page",
+											"value": "1",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Oct 2025 05:16:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"current_page\": 1,\n    \"data\": [\n        {\n            \"id\": \"81277366-2687-4beb-afb1-67940494ba0b\",\n            \"name\": \"CV Karya\",\n            \"email\": \"info@karya.test\",\n            \"phone\": \"0813xxx\",\n            \"address\": \"Bandung\",\n            \"service_plan_id\": \"7192c2bd-8a13-407c-a222-64abf4b7a239\",\n            \"created_at\": \"2025-10-04T05:32:33.000000Z\",\n            \"updated_at\": \"2025-10-04T05:32:33.000000Z\",\n            \"service_plan\": {\n                \"id\": \"7192c2bd-8a13-407c-a222-64abf4b7a239\",\n                \"name\": \"Standard\",\n                \"bandwidth\": \"50 Mbps\",\n                \"price\": 300000,\n                \"created_at\": \"2025-10-04T05:32:33.000000Z\",\n                \"updated_at\": \"2025-10-04T05:32:33.000000Z\"\n            }\n        },\n        {\n            \"id\": \"e7b95ee0-0a99-4be0-bf96-3c5935159a63\",\n            \"name\": \"PT Maju Jaya\",\n            \"email\": \"contact@maju.test\",\n            \"phone\": \"0812xxx\",\n            \"address\": \"Jakarta\",\n            \"service_plan_id\": \"7192c2bd-8a13-407c-a222-64abf4b7a239\",\n            \"created_at\": \"2025-10-04T05:32:33.000000Z\",\n            \"updated_at\": \"2025-10-04T05:32:33.000000Z\",\n            \"service_plan\": {\n                \"id\": \"7192c2bd-8a13-407c-a222-64abf4b7a239\",\n                \"name\": \"Standard\",\n                \"bandwidth\": \"50 Mbps\",\n                \"price\": 300000,\n                \"created_at\": \"2025-10-04T05:32:33.000000Z\",\n                \"updated_at\": \"2025-10-04T05:32:33.000000Z\"\n            }\n        }\n    ],\n    \"first_page_url\": \"http://localhost:8000/api/customers?page=1\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"http://localhost:8000/api/customers?page=1\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"&laquo; Previous\",\n            \"active\": false\n        },\n        {\n            \"url\": \"http://localhost:8000/api/customers?page=1\",\n            \"label\": \"1\",\n            \"active\": true\n        },\n        {\n            \"url\": null,\n            \"label\": \"Next &raquo;\",\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"http://localhost:8000/api/customers\",\n    \"per_page\": 10,\n    \"prev_page_url\": null,\n    \"to\": 2,\n    \"total\": 2\n}"
+						}
+					]
+				},
+				{
+					"name": "FETCH BY ID CUSTOMER",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/customers/:id",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"customers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "81277366-2687-4beb-afb1-67940494ba0b"
+								}
+							]
+						},
+						"description": "GET request to retrieve details of a specific customer by their unique ID.\n\n- Method: GET\n- URL: {{base_url}}api/customers/:id\n- Path Parameter: id (string, required) — Unique identifier of the customer.\n- No request body or query parameters required.\n\nReturns customer details if the ID exists."
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/customers/:id",
+									"host": [
+										"api"
+									],
+									"path": [
+										"customers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "81277366-2687-4beb-afb1-67940494ba0b"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Oct 2025 05:17:33 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"81277366-2687-4beb-afb1-67940494ba0b\",\n    \"name\": \"CV Karya\",\n    \"email\": \"info@karya.test\",\n    \"phone\": \"0813xxx\",\n    \"address\": \"Bandung\",\n    \"service_plan_id\": \"7192c2bd-8a13-407c-a222-64abf4b7a239\",\n    \"created_at\": \"2025-10-04T05:32:33.000000Z\",\n    \"updated_at\": \"2025-10-04T05:32:33.000000Z\",\n    \"service_plan\": {\n        \"id\": \"7192c2bd-8a13-407c-a222-64abf4b7a239\",\n        \"name\": \"Standard\",\n        \"bandwidth\": \"50 Mbps\",\n        \"price\": 300000,\n        \"created_at\": \"2025-10-04T05:32:33.000000Z\",\n        \"updated_at\": \"2025-10-04T05:32:33.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "CREATE CUSTOMERS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "PT Sumber rejeki",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "sumberrejeki@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "085333333333",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Jl. Pahlawan, Jakarta Barat",
+									"type": "text"
+								},
+								{
+									"key": "service_plan_id",
+									"value": "b5e8c308-9f72-4fa4-a0b3-c3b10bd0a9a4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}api/customers",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"customers"
+							]
+						},
+						"description": "POST request to create a new customer.\n\n- Method: POST\n- URL: {{base_url}}api/customers\n- Request Body: JSON object containing customer details (e.g., name, email, phone, etc.).\n- No path parameters or query parameters required.\n\nCreates a new customer and returns the created customer details."
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "PT Sumber rejeki",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "sumberrejeki@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "085333333333",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Jl. Pahlawan, Jakarta Barat",
+											"type": "text"
+										},
+										{
+											"key": "service_plan_id",
+											"value": "b5e8c308-9f72-4fa4-a0b3-c3b10bd0a9a4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "api/customers",
+									"host": [
+										"api"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Oct 2025 05:21:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"PT Sumber rejeki\",\n    \"email\": \"sumberrejeki@gmail.com\",\n    \"phone\": \"085333333333\",\n    \"address\": \"Jl. Pahlawan, Jakarta Barat\",\n    \"service_plan_id\": \"b5e8c308-9f72-4fa4-a0b3-c3b10bd0a9a4\",\n    \"id\": \"0199b2d1-cfe4-7045-b880-4329bf965027\",\n    \"updated_at\": \"2025-10-05T05:21:58.000000Z\",\n    \"created_at\": \"2025-10-05T05:21:58.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "UPDATE CUSTOMERS",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "PT Sumber waras",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "sumberwaras@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "085222222222",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Jl. Pahlawan, Jakarta Selatan",
+									"type": "text"
+								},
+								{
+									"key": "service_plan_id",
+									"value": "901b644d-c331-463d-b6f0-e5d861093fec",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}api/customers/0199b2d1-cfe4-7045-b880-4329bf965027",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"customers",
+								"0199b2d1-cfe4-7045-b880-4329bf965027"
+							]
+						},
+						"description": "POST request to update an existing customer by their unique ID.\n\n- Method: POST\n- URL: {{base_url}}api/customers/:id\n- Path Parameter: id (string, required) — Unique identifier of the customer to update.\n- Request Body: JSON object containing updated customer details (e.g., name, email, phone, etc.).\n- No query parameters required.\n\nUpdates the specified customer and returns the updated customer details."
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "PT Sumber rejeki",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "sumberrejeki@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "085333333333",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Jl. Pahlawan, Jakarta Barat",
+											"type": "text"
+										},
+										{
+											"key": "service_plan_id",
+											"value": "b5e8c308-9f72-4fa4-a0b3-c3b10bd0a9a4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "api/customers",
+									"host": [
+										"api"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Oct 2025 05:21:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"PT Sumber rejeki\",\n    \"email\": \"sumberrejeki@gmail.com\",\n    \"phone\": \"085333333333\",\n    \"address\": \"Jl. Pahlawan, Jakarta Barat\",\n    \"service_plan_id\": \"b5e8c308-9f72-4fa4-a0b3-c3b10bd0a9a4\",\n    \"id\": \"0199b2d1-cfe4-7045-b880-4329bf965027\",\n    \"updated_at\": \"2025-10-05T05:21:58.000000Z\",\n    \"created_at\": \"2025-10-05T05:21:58.000000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE CUSTOMER BY ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "PT Sumber rejeki",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "sumberrejeki@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "085333333333",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "Jl. Pahlawan, Jakarta Barat",
+									"type": "text"
+								},
+								{
+									"key": "service_plan_id",
+									"value": "b5e8c308-9f72-4fa4-a0b3-c3b10bd0a9a4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}api/customers/0199b2d1-cfe4-7045-b880-4329bf965027",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"customers",
+								"0199b2d1-cfe4-7045-b880-4329bf965027"
+							]
+						},
+						"description": "DELETE request to remove a customer by their unique ID.\n\n- Method: DELETE\n- URL: {{base_url}}api/customers/:id\n- Path Parameter: id (string, required) — Unique identifier of the customer to delete.\n- No request body or query parameters required.\n\nDeletes the specified customer and returns a confirmation message."
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "name",
+											"value": "PT Sumber rejeki",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "sumberrejeki@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "085333333333",
+											"type": "text"
+										},
+										{
+											"key": "address",
+											"value": "Jl. Pahlawan, Jakarta Barat",
+											"type": "text"
+										},
+										{
+											"key": "service_plan_id",
+											"value": "b5e8c308-9f72-4fa4-a0b3-c3b10bd0a9a4",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "api/customers/0199b2d1-cfe4-7045-b880-4329bf965027",
+									"host": [
+										"api"
+									],
+									"path": [
+										"customers",
+										"0199b2d1-cfe4-7045-b880-4329bf965027"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Oct 2025 05:26:36 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "TICKET",
+			"item": [
+				{
+					"name": "CREATE TICKET",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Gangguan putus-putus",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Sinyal sering drop",
+									"type": "text"
+								},
+								{
+									"key": "priority",
+									"value": "HIGH",
+									"type": "text"
+								},
+								{
+									"key": "customer_id",
+									"value": "094c1c97-d837-4253-a54d-380ccb172100",
+									"type": "text"
+								},
+								{
+									"key": "assignee_id",
+									"value": "0199b333-d3a0-7219-ae65-f2147128b76d",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}api/tickets",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"tickets"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Gangguan putus-putus",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Sinyal sering drop",
+											"type": "text"
+										},
+										{
+											"key": "priority",
+											"value": "HIGH",
+											"type": "text"
+										},
+										{
+											"key": "customer_id",
+											"value": "094c1c97-d837-4253-a54d-380ccb172100",
+											"type": "text"
+										},
+										{
+											"key": "assignee_id",
+											"value": "0199b333-d3a0-7219-ae65-f2147128b76d",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "api/tickets",
+									"host": [
+										"api"
+									],
+									"path": [
+										"tickets"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Oct 2025 08:09:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Gangguan putus-putus\",\n    \"description\": \"Sinyal sering drop\",\n    \"priority\": \"HIGH\",\n    \"customer_id\": \"094c1c97-d837-4253-a54d-380ccb172100\",\n    \"assignee_id\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n    \"status\": \"OPEN\",\n    \"created_by\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n    \"id\": \"0199b36a-c0b4-7064-9c3c-3fdcb8fd0d2c\",\n    \"updated_at\": \"2025-10-05T08:09:01.000000Z\",\n    \"created_at\": \"2025-10-05T08:09:01.000000Z\",\n    \"customer\": {\n        \"id\": \"094c1c97-d837-4253-a54d-380ccb172100\",\n        \"name\": \"PT Maju Jaya\",\n        \"email\": \"contact@maju.test\",\n        \"phone\": \"0812xxx\",\n        \"address\": \"Jakarta\",\n        \"service_plan_id\": \"007bf05f-0663-4eb3-a2c1-ee01320cf6cf\",\n        \"created_at\": \"2025-10-05T07:09:02.000000Z\",\n        \"updated_at\": \"2025-10-05T07:09:02.000000Z\"\n    },\n    \"assignee\": {\n        \"id\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n        \"name\": \"Admin\",\n        \"email\": \"admin@example.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2025-10-05T07:09:02.000000Z\",\n        \"updated_at\": \"2025-10-05T07:09:02.000000Z\"\n    },\n    \"events\": [\n        {\n            \"id\": \"0199b36a-c0b9-7346-bbc8-8195e3c7bffa\",\n            \"ticket_id\": \"0199b36a-c0b4-7064-9c3c-3fdcb8fd0d2c\",\n            \"actor_id\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n            \"from\": null,\n            \"to\": \"OPEN\",\n            \"note\": \"Ticket created\",\n            \"created_at\": \"2025-10-05T08:09:01.000000Z\",\n            \"updated_at\": \"2025-10-05T08:09:01.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "UPDATE TICKET BY ID",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "to",
+									"value": "RESOLVED",
+									"type": "text"
+								},
+								{
+									"key": "note",
+									"value": "Selesai",
+									"type": "text"
+								},
+								{
+									"key": "_method",
+									"value": "PUT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}api/tickets/:id/status",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"tickets",
+								":id",
+								"status"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0199b34f-93b0-7177-a5e2-5e6bcac6c29f"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Gangguan putus-putus",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Sinyal sering drop",
+											"type": "text"
+										},
+										{
+											"key": "priority",
+											"value": "HIGH",
+											"type": "text"
+										},
+										{
+											"key": "customer_id",
+											"value": "094c1c97-d837-4253-a54d-380ccb172100",
+											"type": "text"
+										},
+										{
+											"key": "assignee_id",
+											"value": "0199b333-d3a0-7219-ae65-f2147128b76d",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "api/tickets",
+									"host": [
+										"api"
+									],
+									"path": [
+										"tickets"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Oct 2025 08:09:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"title\": \"Gangguan putus-putus\",\n    \"description\": \"Sinyal sering drop\",\n    \"priority\": \"HIGH\",\n    \"customer_id\": \"094c1c97-d837-4253-a54d-380ccb172100\",\n    \"assignee_id\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n    \"status\": \"OPEN\",\n    \"created_by\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n    \"id\": \"0199b36a-c0b4-7064-9c3c-3fdcb8fd0d2c\",\n    \"updated_at\": \"2025-10-05T08:09:01.000000Z\",\n    \"created_at\": \"2025-10-05T08:09:01.000000Z\",\n    \"customer\": {\n        \"id\": \"094c1c97-d837-4253-a54d-380ccb172100\",\n        \"name\": \"PT Maju Jaya\",\n        \"email\": \"contact@maju.test\",\n        \"phone\": \"0812xxx\",\n        \"address\": \"Jakarta\",\n        \"service_plan_id\": \"007bf05f-0663-4eb3-a2c1-ee01320cf6cf\",\n        \"created_at\": \"2025-10-05T07:09:02.000000Z\",\n        \"updated_at\": \"2025-10-05T07:09:02.000000Z\"\n    },\n    \"assignee\": {\n        \"id\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n        \"name\": \"Admin\",\n        \"email\": \"admin@example.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2025-10-05T07:09:02.000000Z\",\n        \"updated_at\": \"2025-10-05T07:09:02.000000Z\"\n    },\n    \"events\": [\n        {\n            \"id\": \"0199b36a-c0b9-7346-bbc8-8195e3c7bffa\",\n            \"ticket_id\": \"0199b36a-c0b4-7064-9c3c-3fdcb8fd0d2c\",\n            \"actor_id\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n            \"from\": null,\n            \"to\": \"OPEN\",\n            \"note\": \"Ticket created\",\n            \"created_at\": \"2025-10-05T08:09:01.000000Z\",\n            \"updated_at\": \"2025-10-05T08:09:01.000000Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "FETCH ALL TICKETS",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Gangguan putus-putus",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Sinyal sering drop",
+									"type": "text"
+								},
+								{
+									"key": "priority",
+									"value": "HIGH",
+									"type": "text"
+								},
+								{
+									"key": "customer_id",
+									"value": "094c1c97-d837-4253-a54d-380ccb172100",
+									"type": "text"
+								},
+								{
+									"key": "assignee_id",
+									"value": "0199b333-d3a0-7219-ae65-f2147128b76d",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}api/tickets",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"tickets"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "title",
+											"value": "Gangguan putus-putus",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Sinyal sering drop",
+											"type": "text"
+										},
+										{
+											"key": "priority",
+											"value": "HIGH",
+											"type": "text"
+										},
+										{
+											"key": "customer_id",
+											"value": "094c1c97-d837-4253-a54d-380ccb172100",
+											"type": "text"
+										},
+										{
+											"key": "assignee_id",
+											"value": "0199b333-d3a0-7219-ae65-f2147128b76d",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "api/tickets",
+									"host": [
+										"api"
+									],
+									"path": [
+										"tickets"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Oct 2025 08:07:50 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"current_page\": 1,\n    \"data\": [\n        {\n            \"id\": \"0199b333-f5e6-728c-8060-e7cfdff12f85\",\n            \"title\": \"Internet lambat\",\n            \"description\": \"Kecepatan turun sejak kemarin malam\",\n            \"status\": \"OPEN\",\n            \"priority\": \"HIGH\",\n            \"customer_id\": \"094c1c97-d837-4253-a54d-380ccb172100\",\n            \"created_by\": \"0199b333-d565-7146-b99b-0bbc51a59ccb\",\n            \"assignee_id\": \"0199b333-d485-72f0-b233-58742cd7657c\",\n            \"created_at\": \"2025-10-05T07:09:11.000000Z\",\n            \"updated_at\": \"2025-10-05T07:09:11.000000Z\",\n            \"customer\": {\n                \"id\": \"094c1c97-d837-4253-a54d-380ccb172100\",\n                \"name\": \"PT Maju Jaya\"\n            },\n            \"assignee\": {\n                \"id\": \"0199b333-d485-72f0-b233-58742cd7657c\",\n                \"name\": \"NOC Agent\"\n            }\n        },\n        {\n            \"id\": \"0199b34f-93b0-7177-a5e2-5e6bcac6c29f\",\n            \"title\": \"Test\",\n            \"description\": \"Desc\",\n            \"status\": \"OPEN\",\n            \"priority\": \"MEDIUM\",\n            \"customer_id\": \"81277366-2687-4beb-afb1-67940494ba0b\",\n            \"created_by\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n            \"assignee_id\": null,\n            \"created_at\": \"2025-10-05T07:39:20.000000Z\",\n            \"updated_at\": \"2025-10-05T07:39:20.000000Z\",\n            \"customer\": null,\n            \"assignee\": null\n        },\n        {\n            \"id\": \"0199b364-cc10-71bb-a4a4-761c53aca4ab\",\n            \"title\": \"Gangguan putus-putus\",\n            \"description\": \"Sinyal sering drop\",\n            \"status\": \"OPEN\",\n            \"priority\": \"HIGH\",\n            \"customer_id\": \"094c1c97-d837-4253-a54d-380ccb172100\",\n            \"created_by\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n            \"assignee_id\": null,\n            \"created_at\": \"2025-10-05T08:02:31.000000Z\",\n            \"updated_at\": \"2025-10-05T08:02:31.000000Z\",\n            \"customer\": {\n                \"id\": \"094c1c97-d837-4253-a54d-380ccb172100\",\n                \"name\": \"PT Maju Jaya\"\n            },\n            \"assignee\": null\n        },\n        {\n            \"id\": \"0199b365-d478-70bc-afb5-a8bb007cd506\",\n            \"title\": \"Gangguan putus-putus\",\n            \"description\": \"Sinyal sering drop\",\n            \"status\": \"OPEN\",\n            \"priority\": \"HIGH\",\n            \"customer_id\": \"094c1c97-d837-4253-a54d-380ccb172100\",\n            \"created_by\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n            \"assignee_id\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n            \"created_at\": \"2025-10-05T08:03:39.000000Z\",\n            \"updated_at\": \"2025-10-05T08:03:39.000000Z\",\n            \"customer\": {\n                \"id\": \"094c1c97-d837-4253-a54d-380ccb172100\",\n                \"name\": \"PT Maju Jaya\"\n            },\n            \"assignee\": {\n                \"id\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n                \"name\": \"Admin\"\n            }\n        }\n    ],\n    \"first_page_url\": \"http://localhost:8000/api/tickets?page=1\",\n    \"from\": 1,\n    \"last_page\": 1,\n    \"last_page_url\": \"http://localhost:8000/api/tickets?page=1\",\n    \"links\": [\n        {\n            \"url\": null,\n            \"label\": \"&laquo; Previous\",\n            \"active\": false\n        },\n        {\n            \"url\": \"http://localhost:8000/api/tickets?page=1\",\n            \"label\": \"1\",\n            \"active\": true\n        },\n        {\n            \"url\": null,\n            \"label\": \"Next &raquo;\",\n            \"active\": false\n        }\n    ],\n    \"next_page_url\": null,\n    \"path\": \"http://localhost:8000/api/tickets\",\n    \"per_page\": 10,\n    \"prev_page_url\": null,\n    \"to\": 4,\n    \"total\": 4\n}"
+						}
+					]
+				},
+				{
+					"name": "FETCH BY ID TICKET (TIMELINE)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}api/tickets/:id",
+							"host": [
+								"{{base_url}}api"
+							],
+							"path": [
+								"tickets",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "0199b333-f5e6-728c-8060-e7cfdff12f85"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "api/tickets/:id",
+									"host": [
+										"api"
+									],
+									"path": [
+										"tickets",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "0199b333-f5e6-728c-8060-e7cfdff12f85"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.5"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 Oct 2025 08:13:08 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"0199b333-f5e6-728c-8060-e7cfdff12f85\",\n    \"title\": \"Internet lambat\",\n    \"description\": \"Kecepatan turun sejak kemarin malam\",\n    \"status\": \"IN_PROGRESS\",\n    \"priority\": \"HIGH\",\n    \"customer_id\": \"094c1c97-d837-4253-a54d-380ccb172100\",\n    \"created_by\": \"0199b333-d565-7146-b99b-0bbc51a59ccb\",\n    \"assignee_id\": \"0199b333-d485-72f0-b233-58742cd7657c\",\n    \"created_at\": \"2025-10-05T07:09:11.000000Z\",\n    \"updated_at\": \"2025-10-05T08:11:46.000000Z\",\n    \"customer\": {\n        \"id\": \"094c1c97-d837-4253-a54d-380ccb172100\",\n        \"name\": \"PT Maju Jaya\",\n        \"email\": \"contact@maju.test\",\n        \"phone\": \"0812xxx\",\n        \"address\": \"Jakarta\",\n        \"service_plan_id\": \"007bf05f-0663-4eb3-a2c1-ee01320cf6cf\",\n        \"created_at\": \"2025-10-05T07:09:02.000000Z\",\n        \"updated_at\": \"2025-10-05T07:09:02.000000Z\"\n    },\n    \"assignee\": {\n        \"id\": \"0199b333-d485-72f0-b233-58742cd7657c\",\n        \"name\": \"NOC Agent\",\n        \"email\": \"noc@example.com\",\n        \"email_verified_at\": null,\n        \"created_at\": \"2025-10-05T07:09:02.000000Z\",\n        \"updated_at\": \"2025-10-05T07:09:02.000000Z\"\n    },\n    \"events\": [\n        {\n            \"id\": \"0199b333-f5f5-7112-8414-483bbede5ca8\",\n            \"ticket_id\": \"0199b333-f5e6-728c-8060-e7cfdff12f85\",\n            \"actor_id\": \"0199b333-d565-7146-b99b-0bbc51a59ccb\",\n            \"from\": null,\n            \"to\": \"OPEN\",\n            \"note\": \"Seed ticket\",\n            \"created_at\": \"2025-10-05T07:09:11.000000Z\",\n            \"updated_at\": \"2025-10-05T07:09:11.000000Z\",\n            \"actor\": {\n                \"id\": \"0199b333-d565-7146-b99b-0bbc51a59ccb\",\n                \"name\": \"Customer Service\"\n            }\n        },\n        {\n            \"id\": \"0199b36d-444f-72b7-b399-bc07e58e172a\",\n            \"ticket_id\": \"0199b333-f5e6-728c-8060-e7cfdff12f85\",\n            \"actor_id\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n            \"from\": \"OPEN\",\n            \"to\": \"IN_PROGRESS\",\n            \"note\": \"Mulai Investigasi\",\n            \"created_at\": \"2025-10-05T08:11:46.000000Z\",\n            \"updated_at\": \"2025-10-05T08:11:46.000000Z\",\n            \"actor\": {\n                \"id\": \"0199b333-d3a0-7219-ae65-f2147128b76d\",\n                \"name\": \"Admin\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
